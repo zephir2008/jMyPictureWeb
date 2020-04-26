@@ -25,10 +25,10 @@ public class Ping extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private String auteur;
     
-//    private static PrintWriter writeln( HttpServletRequest request, HttpServletResponse response ) throws IOException {
-//		return response.getWriter().append("Served at: ").append(request.getContextPath());
-//    }
-// 
+    private static void writeln( HttpServletRequest request, HttpServletResponse response ) throws IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+    }
+ 
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -63,7 +63,7 @@ public class Ping extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println( "GET !!!" );
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		writeln( request, response );
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class Ping extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		System.out.println( "POST !!!" );
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		writeln( request, response );
 	}
 
 	/**
@@ -81,8 +81,8 @@ public class Ping extends HttpServlet {
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		System.out.println( "PUT !!!" );
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println( "PUT !!!" );
+		writeln( request, response );
 	}
 
 	/**
@@ -90,8 +90,7 @@ public class Ping extends HttpServlet {
 	 */
 	protected void doOptions(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		// writeln( request, response, "OPTIONS !!!"+"<br>"+auteur );
+		writeln( request, response );
 		System.out.println( "OPTIONS !!!" );
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 }
