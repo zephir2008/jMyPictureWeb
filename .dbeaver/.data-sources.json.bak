@@ -1,0 +1,17 @@
+{
+	"folders": {},
+	"connections": {
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": true,
+			"confirm-data-change": false
+		}
+	},
+	"drivers": {
+	}
+}
