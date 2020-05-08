@@ -33,7 +33,6 @@ public class JmyPicture extends HttpServlet {
     public JmyPicture() {
     	super();
         //System.out.println("Ping !!");
-        // TODO Auto-generated constructor stub
     }
 
     @Override
@@ -59,7 +58,6 @@ public class JmyPicture extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		System.out.println( "GET !!!" );
 		writeln( request, response );
 	}
@@ -68,7 +66,6 @@ public class JmyPicture extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		//doGet(request, response);
 		System.out.println( "POST !!!" );
 		writeln( request, response );
@@ -78,7 +75,6 @@ public class JmyPicture extends HttpServlet {
 	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
 	 */
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		System.out.println( "PUT !!!" );
 		writeln( request, response );
 	}
@@ -87,7 +83,6 @@ public class JmyPicture extends HttpServlet {
 	 * @see HttpServlet#doOptions(HttpServletRequest, HttpServletResponse)
 	 */
 	protected void doOptions(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		writeln( request, response );
 		System.out.println( "OPTIONS !!!" );
 	}
