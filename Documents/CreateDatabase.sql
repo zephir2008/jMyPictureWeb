@@ -1,4 +1,5 @@
 -- Run AS root/Admin TO CREATE the Databases
+use mysql;
 
 DROP database IF EXISTS jmypicture;
 CREATE database jmypicture

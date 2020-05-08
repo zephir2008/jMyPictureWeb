@@ -1,0 +1,681 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>270</y>
+      <w>150</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>
+:picture
+
+--
+*+pic_id : char(36)*
+-pic_cr_date : datetime
++pic_name : varchar(1024)
++pic_desc : varchar(2048)
+-pic_isvalid : bool
++pic_width : int
++pic_height : int
++pic_weight : int
+-pic_md5 : char(32)
+-pic_sign : char(32)
+--
+customelement=
+// Entity Symbol
+drawCircle(25, 25, 10)
+drawLine(15, 35, 35, 35)
+bg=blue
+transparency=90
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1074</x>
+      <y>288</y>
+      <w>126</w>
+      <h>114</h>
+    </coordinates>
+    <panel_attributes>
+:tag
+
+--
+*+tag_id : char(36)*
+-tag_cr_date: datetime
++tag_name : varchar(50)
++tag_value : varchar(50)
+-tag_isvalid : bool
+--
+customelement=
+// Entity Symbol
+drawCircle(25, 25, 10)
+drawLine(15, 35, 35, 35)
+bg=blue
+transparency=90
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>408</y>
+      <w>114</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>:pic_tag
+--
+*+pt_pic_id : char(36)*
+*+pt_tag_id : char(36)*
+*-pt_cr_date : datetime*
+-pt_isvalid : bool
+--
+bg=yellow
+transparency=90
+fg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>894</x>
+      <y>336</y>
+      <w>192</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=0..n
+m2=0..n
+hold &gt;
+&lt; assigned to</panel_attributes>
+    <additional_attributes>10.0;20.0;300.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>984</x>
+      <y>342</y>
+      <w>18</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1314</x>
+      <y>294</y>
+      <w>126</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>
+:tag_value
+
+--
+*-tv_id : char(36)*
+-tv_cr_date : datetime
++tv_content : varchar(50)
+-tv_isvalid : bool
+--
+customelement=
+// Entity Symbol
+drawCircle(25, 25, 10)
+drawLine(15, 35, 35, 35)
+bg=blue
+transparency=90
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1194</x>
+      <y>336</y>
+      <w>132</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..n
+uses &gt;
+&lt; is part of</panel_attributes>
+    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>816</x>
+      <y>426</y>
+      <w>18</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;520.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>762</x>
+      <y>732</y>
+      <w>114</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>template=1
+v_picture
+--
+
+--
++add()
++look()
+-modify()
++del()
++search()
+--
+bg=#66FF66
+transparency=80</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1074</x>
+      <y>732</y>
+      <w>114</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>template=1
+v_tag
+--
+
+--
++add()
++look()
+-modify()
++del()
++search()
+--
+bg=#66FF66
+transparency=80</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1128</x>
+      <y>396</y>
+      <w>18</w>
+      <h>354</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;570.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1326</x>
+      <y>732</y>
+      <w>114</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>template=1
+v_tag_value
+--
+
+--
++add()
++look()
+-modify()
++del()
++search()
+--
+bg=#66FF66
+transparency=80</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1374</x>
+      <y>390</y>
+      <w>18</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>462</x>
+      <y>282</y>
+      <w>150</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>
+:album
+
+--
+*+album_id : char(36)*
+*-album_cr_date : datetime*
++album_name : varchar(1024)
++album_desc : varchar(2048)
+-album_isvalid : bool
++album_length : int
+-album_sign : char(32)
+--
+customelement=
+// Entity Symbol
+drawCircle(25, 25, 10)
+drawLine(15, 35, 35, 35)
+bg=blue
+transparency=90
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>606</x>
+      <y>342</y>
+      <w>156</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..n
+contains &gt;
+&lt; contained in</panel_attributes>
+    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>732</y>
+      <w>114</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>template=1
+v_album
+--
+
+--
++add()
++look()
+-modify()
++del()
++search()
+--
+bg=#66FF66
+transparency=80</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>402</y>
+      <w>18</w>
+      <h>348</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>738</y>
+      <w>114</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>template=1
+v_by_tag
+--
+
+--
++add()
++del()
++search()
+--
+bg=#66FF66
+transparency=80</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>978</x>
+      <y>474</y>
+      <w>18</w>
+      <h>282</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;450.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>852</x>
+      <y>426</y>
+      <w>144</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0;220.0;180.0;220.0;530.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>978</x>
+      <y>396</y>
+      <w>132</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;200.0;230.0;10.0;230.0;10.0;580.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>864</y>
+      <w>114</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>template=1
+v_by_picture
+bg=#66FF66
+transparency=80</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>978</x>
+      <y>828</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>174</x>
+      <y>270</y>
+      <w>150</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>
+:user
+
+--
+*+user_id : char(36)*
+*-user_creation_date : datetime*
++user_name : varchar(120)
++user_surname : varchar(50)
+-user_isvalid : bool
++user_email : varchar(256)
++user_password : password
++user_birthdate : (month,day)
+-user_data : char(32)
+-user_sign : char(32)
++user_last_connexion : datetime
+--
+customelement=
+// Entity Symbol
+drawCircle(25, 25, 10)
+drawLine(15, 35, 35, 35)
+bg=blue
+transparency=90
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>318</x>
+      <y>342</y>
+      <w>156</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..n
+owns &gt;
+&lt; belongs to</panel_attributes>
+    <additional_attributes>10.0;20.0;240.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>192</x>
+      <y>732</y>
+      <w>114</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>template=1
+v_user
+--
+
+--
++add()
++look()
+-modify()
++del()
++search()
+--
+bg=#66FF66
+transparency=80</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>426</y>
+      <w>18</w>
+      <h>324</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;520.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>186</y>
+      <w>138</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Zone BDD - accès restreint
+jMyPicture
+bg=yellow
+fg=red
+lt=..
+transparency=70</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>174</x>
+      <y>0</y>
+      <w>150</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>
+:library
+
+--
+*+user_id : char(36)*
+*-user_creation_date : datetime*
++user_name : varchar(120)
++user_surname : varchar(50)
+-user_isvalid : bool
++user_email : varchar(256)
++user_password : password
++user_birthdate : (month,day)
+-user_data : char(32)
+-user_sign : char(32)
+--
+customelement=
+// Entity Symbol
+drawCircle(25, 25, 10)
+drawLine(15, 35, 35, 35)
+bg=blue
+transparency=90
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>234</x>
+      <y>156</y>
+      <w>66</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=0..n
+groups v
+
+belongs to ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>468</x>
+      <y>0</y>
+      <w>390</w>
+      <h>78</h>
+    </coordinates>
+    <panel_attributes>Index de recherche de texte
+transmission d'identifiant (rattachement complet : effet train)
+index de recherche pour optimisation
+index de limitation des doublons (tag &amp; tag_value) et unique (id secondaires) ?
+limitation des actions possibles (updates : triggers de contrôle)
+bg=yellow
+fg=red
+lt=..
+transparency=70</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>0</x>
+      <y>786</y>
+      <w>138</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Zone Utilisateur
+vPicture
+bg=yellow
+fg=red
+lt=..
+transparency=70</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>510</y>
+      <w>126</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>
+:folder
+
+--
+*-folder_id : char(36)*
+-folder_cr_date : datetime
++folder_path : varchar(4096)
+-folder_isvalid : bool
+-folder_sign : char(32)
+--
+customelement=
+// Entity Symbol
+drawCircle(25, 25, 10)
+drawLine(15, 35, 35, 35)
+bg=blue
+transparency=90
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>732</y>
+      <w>114</w>
+      <h>102</h>
+    </coordinates>
+    <panel_attributes>template=1
+v_folder
+--
+
+--
++add()
++look()
+-modify()
++del()
++search()
+--
+bg=#66FF66
+transparency=80</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>606</y>
+      <w>18</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>672</x>
+      <y>378</y>
+      <w>90</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1
+m2=1..n
+stored in v
+
+list ^</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>528</x>
+      <y>180</y>
+      <w>636</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..n
+m2=0..n
+teaches to &gt;</panel_attributes>
+    <additional_attributes>10.0;170.0;10.0;20.0;1020.0;20.0;1020.0;180.0</additional_attributes>
+  </element>
+</diagram>

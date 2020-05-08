@@ -3,9 +3,10 @@
 use jmypicture;
 
 create or replace table picture (
-	pic_id			char(36)		not null default UUID(),
-	pic_cr_date		datetime		not null default now(),
+	pic_id			char(36)		not null default UUID()	comment 'auto-valued',
+	pic_cr_date		datetime		not null default now()	comment 'creation date, auto valued',
 	pic_name		varchar(1024)	not null,
+	pic_desc		varchar(2048)							comment 'A legend for the picture'
 	pic_isvalid		bool			not null default true,
 	pic_width		int,
 	pic_height		int,
@@ -26,14 +27,26 @@ create or replace table pic_tag (
 	pt_pic_id		char(36)		not null,
 	pt_tag_id		char(36)		not null,
 	pt_cr_date		datetime		not null default now(),
-	pt_isvalid		bool			not null,
+	pt_isvalid		bool			not null default true,
 	constraint pk_pt primary key (pt_pic_id, pt_tag_id)
+) engine=MyISAM;
+
+create or replace table tag_value (
+ 	tv_id			char(36)		not null default uuid(),
+ 	tv_cr_date		datetime		not null default now(),
+ 	tv_content		varchar(50)		not null,
+ 	tv_isvalid		bool			not null default true,
+ 	fk_tag			char(36)		not null,
+ 	constraint pk_vt primary key (tv_id)
 ) engine=MyISAM;
 
 alter table pic_tag
 	add constraint un_pt unique key (pt_tag_id, pt_pic_id),
 	add constraint fk_pic_id foreign key (pt_pic_id) references picture (pic_id) on delete cascade,
 	add constraint fk_tag_id foreign key (pt_tag_id) references tag (tag_id) on delete cascade;
+
+alter table tag_value
+	add constraint fk_tag_tag_value foreign key (fk_tag) references tag (tag_id) on delete cascade;
 
 create or replace trigger trau_disab_picture
 after update on picture for each row
@@ -46,4 +59,3 @@ after update on tag for each row
 update pic_tag 
 	set pt_isvalid = tag.tag_isvalid 
 	where tag.tag_id = pic_tag.pt_tag_id;
-

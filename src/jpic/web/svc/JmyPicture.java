@@ -1,7 +1,6 @@
 package jpic.web.svc;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebInitParam;
@@ -15,13 +14,12 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(
 		name = "Ping"
-	    ,value = "/Ping"
+		,value = "/Ping"
 		,initParams= {@WebInitParam(
-			name="param1",
-			value="maValeurInit"
-		)}
-)
-public class Ping extends HttpServlet {
+				name="param1",value="maValeurInit"
+				)}
+		)
+public class JmyPicture extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     private String auteur;
     
@@ -32,7 +30,7 @@ public class Ping extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Ping() {
+    public JmyPicture() {
     	super();
         //System.out.println("Ping !!");
         // TODO Auto-generated constructor stub
@@ -43,20 +41,20 @@ public class Ping extends HttpServlet {
     	System.out.println("Servlet init");
     	this.auteur = this.getInitParameter("param1");
     }
-   
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse answer) throws ServletException, IOException {
     	System.out.println("Service call");
     	super.service( request, answer );
     }
-    
+
     @Override
     public void destroy() {
     	System.out.println("Servlet quit");
-    	System.out.println();
+    	System.out.println( this.auteur );
     	super.destroy();
     }
-    
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

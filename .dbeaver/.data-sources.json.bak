@@ -1,6 +1,24 @@
 {
 	"folders": {},
 	"connections": {
+		"mariaDB-171b3546eb5-132f13e31b1d19f1": {
+			"provider": "mysql",
+			"driver": "mariaDB",
+			"name": "MariaDB - jmypicture",
+			"save-password": true,
+			"show-system-objects": true,
+			"read-only": false,
+			"configuration": {
+				"host": "localhost",
+				"port": "3306",
+				"database": "jmypicture",
+				"url": "jdbc:mysql://localhost:3306/jmypicture",
+				"home": "/usr",
+				"type": "dev",
+				"auth-model": "native",
+				"handlers": {}
+			}
+		}
 	},
 	"connection-types": {
 		"dev": {
@@ -8,10 +26,8 @@
 			"color": "255,255,255",
 			"description": "Regular development database",
 			"auto-commit": true,
-			"confirm-execute": true,
+			"confirm-execute": false,
 			"confirm-data-change": false
 		}
-	},
-	"drivers": {
 	}
 }
